@@ -1,53 +1,47 @@
 const {
-  calcularVelocidadeMedia,
-  converterMpsParaKmph,
-  encontrarMenorValor,
+  converterFarenheitParaCelsius,
+  encontrarMaiorValor,
+  calcularDistanciaPercorrida,
 } = require("./funcoes");
 
-describe("Funções do arquivo funcoes.js", () => {
-  describe("converterMpsParaKmph", () => {
-    test("Deve converter corretamente de m/s para km/h", () => {
-      expect(converterMpsParaKmph(10)).toBe(36);
-    });
-
-    test("Deve retornar -1 para valores negativos", () => {
-      expect(converterMpsParaKmph(-5)).toBe(-1);
-    });
-
-    test("Deve retornar 0 para entrada 0", () => {
-      expect(converterMpsParaKmph(0)).toBe(0);
-    });
+describe("converterFarenheitParaCelsius", () => {
+  test("converte 32°F para 0°C", () => {
+    expect(converterFarenheitParaCelsius(32)).toBe(0);
   });
 
-  describe("encontrarMenorValor", () => {
-    it("retorna o menor valor de um array", () => {
-      expect(encontrarMenorValor([10, 5, 20, 3])).toBe(3);
-    });
-
-    it("lança um erro se o array estiver vazio", () => {
-      expect(encontrarMenorValor([])).toBe("Array vazio");
-    });
-
-    it("funciona corretamente com valores negativos", () => {
-      expect(encontrarMenorValor([-10, -5, -20, -3])).toBe(-20);
-    });
+  test("converte 212°F para 100°C", () => {
+    expect(converterFarenheitParaCelsius(212)).toBe(100);
   });
 
-  describe("calcularVelocidadeMedia", () => {
-    test("Deve calcular corretamente a velocidade média", () => {
-      expect(calcularVelocidadeMedia(100, 2)).toBe(50);
-    });
+  test("converte -40°F para -40°C", () => {
+    expect(converterFarenheitParaCelsius(-40)).toBe(-40);
+  });
+});
 
-    test("Deve retornar -1 se distância e tempo forem negativos", () => {
-      expect(calcularVelocidadeMedia(-100, -2)).toBe(-1);
-    });
+describe("encontrarMaiorValor", () => {
+  test("retorna o maior número em um array de inteiros", () => {
+    expect(encontrarMaiorValor([10, 30, 25, 5])).toBe(30);
+  });
 
-    test("Deve retornar Infinity se o tempo for 0", () => {
-      expect(calcularVelocidadeMedia(100, 0)).toBe(Infinity);
-    });
+  test("retorna valor único se houver só um elemento", () => {
+    expect(encontrarMaiorValor([42])).toBe(42);
+  });
 
-    test("Deve retornar 0 se a distância for 0", () => {
-      expect(calcularVelocidadeMedia(0, 10)).toBe(0);
-    });
+  test("retorna mensagem se o array estiver vazio", () => {
+    expect(encontrarMaiorValor([])).toBe("Array vazio");
+  });
+});
+
+describe("calcularDistanciaPercorrida", () => {
+  test("retorna 100 ao multiplicar velocidade 10 m/s por tempo 10 s", () => {
+    expect(calcularDistanciaPercorrida(10, 10)).toBe(100);
+  });
+
+  test("retorna 0 se velocidade for 0", () => {
+    expect(calcularDistanciaPercorrida(0, 50)).toBe(0);
+  });
+
+  test("retorna 0 se tempo for 0", () => {
+    expect(calcularDistanciaPercorrida(20, 0)).toBe(0);
   });
 });

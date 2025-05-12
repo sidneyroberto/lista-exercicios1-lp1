@@ -1,33 +1,33 @@
 /**
- * Converte uma velocidade em metros por segundo (m/s) para quilômetros por hora (km/h).
- * @param {*} velocidadeMps Velocidade em metros por segundo (m/s).
- * @returns Velocidade em quilômetros por hora (km/h) ou -1 se a entrada for negativa.
+ * Converte uma temperatura em graus Farenheit para Celsius.
+ * @param {*} velocidadeMps Temperatura em graus Farenheit.
+ * @returns Valor da temperatura em Celsius.
  */
-function converterMpsParaKmph(velocidadeMps) {
-  // TODO: Implementar a conversão de m/s para km/h
+function converterFarenheitParaCelsius(velocidadeMps) {
+  // TODO: Implementar a conversão de Farenheit para Celsius
 }
 
 /**
- * Encontra o menor valor em um array.
+ * Encontra o maior valor em um array.
  * @param {*} array Array de números.
- * @returns O menor valor do array ou uma mensagem de erro se o array estiver vazio.
+ * @returns O maior valor do array ou uma mensagem de erro se o array estiver vazio.
  */
-function encontrarMenorValor(array) {
-  // TODO: Implementar a lógica para encontrar o menor valor
+function encontrarMaiorValor(array) {
+  // TODO: Implementar a lógica para encontrar o maior valor
 }
 
 /**
- * Calcula a velocidade média dada uma distância e um tempo.
- * @param {*} distancia Distância percorrida.
- * @param {*} tempo Tempo gasto.
- * @returns A velocidade média ou -1 se a distância e o tempo forem negativos.
+ * Calcula a distância percorrida por um objeto de acordo com a velocidade média e o tempo gasto.
+ * @param {*} velocidade Velocidade média em metros por segundo.
+ * @param {*} tempo Tempo gasto em segundos.
+ * @returns A distância percorrida em metros por segundo.
  */
-function calcularVelocidadeMedia(distancia, tempo) {
+function calcularDistanciaPercorrida(velocidade, tempo) {
   // TODO: Implementar o cálculo da velocidade média
 }
 
 module.exports = {
-  calcularVelocidadeMedia,
-  converterMpsParaKmph,
-  encontrarMenorValor,
+  converterFarenheitParaCelsius,
+  encontrarMaiorValor,
+  calcularDistanciaPercorrida,
 };
